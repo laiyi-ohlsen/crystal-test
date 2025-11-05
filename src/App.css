@@ -1,0 +1,169 @@
+@font-face{
+  font-family: 'heading';
+  src: url(./font/Pacifico.ttf);
+}
+
+@font-face{
+  font-family: 'p';
+  src: url(./font/Lato-Bold.ttf);
+}
+.container{
+  background-image: url('/asset/menu.jpeg');
+  background-size: 100% 100%;  
+  background-repeat: no-repeat;
+  width: 100vw;  
+  min-height: 150vh;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-row: repeat(25, 1fr);
+
+  gap: 10px 0px;
+  overflow: scroll;
+  /* text color for all text */
+  color:rgb(255, 237, 166) ;
+}
+
+.container input{
+  width: 360px;      
+  height: 30px;      
+  font-size: 16px;   
+  border-radius: 8px;
+  font-family: 'p';
+}
+
+.upload-btn {
+  background-color: #ffecb7;
+  font-style: italic;
+  color: rgb(78, 107, 153);
+  border-radius: 8px;
+  padding: 5px 10px;  /* padding so that button edges aren't too tight and looks bigger */
+  cursor: pointer;   /* when the mouse is on the button, the mouse will turn into a hand press symbol */
+  font-size: 15px;
+  display: inline-block;   /* shows a small gap or  allows margin-bottom and width/height to work properly to show a gap between upload and input box*/
+  margin-bottom: 10px;
+}
+.upload-btn:hover {
+  background-color: #fbefca;
+  transform: scale(1.05);   /* becomes bigger when hovered */
+}
+
+.upload-btn input {
+  display: none; /* hide the choose files word*/
+}
+
+/* these are just the styles of the headings */
+h1{
+  font-family: "heading";
+  font-size: 70px;
+  text-align: center;
+  margin-top: 70px;
+  grid-column: 5/12;
+  grid-row: 5/7;
+}
+h2{
+  text-align: center;
+  font-family: "heading";
+  font-size: 40px;
+  margin-bottom: 2px;
+}
+h4{
+  font-family: 'p';
+  text-align: start;
+  margin-top: 2px;
+}
+
+/* these are the positions of each sections */
+.childhood{
+  grid-column: 3/8;
+  grid-row: 7/10;
+  text-align: center;
+}
+
+.current{
+  grid-column: 9/14;
+  grid-row: 7/10;
+  text-align: center;
+}
+
+.cultural{
+  grid-column: 3/8;
+  grid-row: 14/17;
+  text-align: center;
+}
+
+.comfort{
+  grid-column: 9/14;
+  grid-row: 14/17;
+  text-align: center;
+}
+
+.wish{
+  grid-column: 6/11;
+  grid-row: 18/21;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.childhood p,  .current p, .cultural p, .comfort p, .wish p{ /* did it this way so that all p or input box, after info entered, for all sections will have this layout */
+  font-family: 'p';
+  margin-top: 10px;
+  color: rgb(41, 70, 116);   
+  text-align: center;
+  background-color:  rgb(254, 241, 204) ; 
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+
+/* Container for gallery items/ or the images */
+.imageLayout {
+  display: flex;
+  gap: 8px;
+  padding: 16px;
+  flex-wrap: wrap; /* allows multiple rows */
+  justify-content: center;   /* centers the images horizontally */
+}
+.gallery-item {
+  position: relative;
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 8px;
+  transition: all 0.2s;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* When an item is being dragged */
+.gallery-item.dragged {
+  opacity: 0.5;
+  border-style: dashed;
+}
+
+/* Hovered drop target, so when an image is hovered over it will have this blue frame*/
+.gallery-item.hovered {
+  outline: 3px solid #5ca0ef;
+}
+
+/* Images inside gallery items */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+/* Remove button */
+.remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(245, 75, 75, 0.8);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
